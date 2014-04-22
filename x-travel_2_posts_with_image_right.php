@@ -59,12 +59,16 @@ $title = cut_str(db::result( $title_query ),10,"...");
 	?>
 	<tr valign='top'>
 		
-            <?php			
-			$imgsrc = x::post_thumbnail( $_bo_table , $list[$i]['wr_id'], 32, 32 );
+            <?php
+			$_wr_id = $list[$i]['wr_id'];
+			$imgsrc = x::post_thumbnail( $_bo_table , $_wr_id, 32, 32 );
+			if ( empty($imgsrc) ) {
+				$_wr_content = db::result("SELECT wr_content FROM $g5[write_prefix]$_bo_table WHERE wr_id='$_wr_id'");
+				$image_from_tag = g::thumbnail_from_image_tag($_wr_content, $_bo_table, 32, 32);
+				if ( empty($image_from_tag) ) $img = "<div class='no-image'></div>";
+				else $img = "<img src='$image_from_tag'/>";
+			} else $img = "<img src='".$imgsrc['src']."'/>";
 
-			if( $imgsrc ) $img = "<img src='".$imgsrc['src']."'/>";
-			else $img = "<div class='no-image'></div>";
-			
 			echo "<td class='$nopadding' width=40><div class='travel_2_image'><a href='".$list[$i]['url']."'>$img</a></div></td>";
 			        
             echo "<td class='$nopadding'><div class='travel_2_subject'><a href='".$list[$i]['url']."'>".$list[$i]['subject']."</a></div></td>";
