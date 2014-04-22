@@ -1,0 +1,107 @@
+.widget-admin .button{
+	z-index:999;
+}
+
+.travel_2_timed_list_with_image {	
+	overflow: hidden;	
+	border:1px solid #bbbbbb;
+	height:199px;
+	padding-bottom:10px;
+}
+
+.travel_2_timed_list_with_image .title{
+	font-weight:bold;	
+	font-family:Dotum;
+	background-color:#fcfcfc;
+	padding:0 6px 0 10px;
+	height: 28px;
+	line-height: 28px;
+	border-bottom:1px solid #bbbbbb;
+	position:relative;
+}
+
+.travel_2_timed_list_with_image .title a {
+	color: #444444;
+}
+
+.travel_2_timed_list_with_image .title a:hover {
+	text-decoration:none;
+}
+
+.travel_2_timed_list_with_image .title .more_button {
+	position:absolute;
+	right:0;
+	top:0;
+}
+.travel_2_timed_list_with_image .title .more_button{
+	font-weight:normal;
+	color:#808080;
+	font-size: 9pt;
+	float:right;
+	margin: 2px 10px 0 0;
+	text-decoration:none;
+}
+
+
+.travel_2_timed_list_with_image table {
+
+}
+
+.travel_2_timed_list_with_image .title img{
+	position:relative;
+	top: -1px;
+	left:-2px;
+	margin-right:5px;
+	width:15px;
+	height:15px;
+}
+
+
+.travel_2_timed_list_with_image  .travel_2_image {
+	margin-right: 10px;
+	border:1px solid  #cccccc;
+	height:38px;
+	width:38px;	
+}
+
+.travel_2_timed_list_with_image  .travel_2_image .no-image{
+	border:3px solid #e5e5e5;
+	height:32px;
+	width:32px;
+} 
+
+.travel_2_timed_list_with_image .travel_2_image img {	
+	border:3px solid #e5e5e5;
+	height:32px;
+	width:32px;
+}
+
+/******************/
+.travel_2_timed_list_with_image .travel_2_subject{
+	min-width:138px;
+	word-break:break-all;
+	height:30px;
+	overflow:hidden;	
+	line-height:15px;	
+}
+
+.travel_2_timed_list_with_image .travel_2_subject a{
+	text-decoration:none;
+}
+
+.travel_2_timed_list_with_image  tr td{
+	padding:10px 0 8px 0;
+	border-bottom:1px dashed #bfbfbf;
+}
+.travel_2_timed_list_with_image  tr:last-child td{
+	border-bottom: 0;
+}
+.travel_2_timed_list_with_image  td.no-padding{
+	padding:10px 0 0 0;
+	border-bottom:none;
+}
+
+.travel_images_2_container {
+	padding: 0 10px;
+}
+
