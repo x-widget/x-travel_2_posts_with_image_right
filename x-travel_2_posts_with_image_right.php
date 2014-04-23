@@ -65,7 +65,7 @@ $title = cut_str(db::result( $title_query ),10,"...");
 			if ( empty($imgsrc) ) {
 				$_wr_content = db::result("SELECT wr_content FROM $g5[write_prefix]$_bo_table WHERE wr_id='$_wr_id'");
 				$image_from_tag = g::thumbnail_from_image_tag($_wr_content, $_bo_table, 32, 32);
-				if ( empty($image_from_tag) ) $img = "<div class='no-image'></div>";
+				if ( empty($image_from_tag) ) $img = "<img src='".x::url()."/widget/".$widget_config['name']."/img/no-image.png'/>";
 				else $img = "<img src='$image_from_tag'/>";
 			} else $img = "<img src='".$imgsrc['src']."'/>";
 
@@ -79,15 +79,15 @@ $title = cut_str(db::result( $title_query ),10,"...");
     <?php if (count($list) == 0) { //게시물이 없을 때  
 	?>
 		<tr valign='top'>
-			<td class='$nopadding' width=40><div class='travel_2_image'><a href='http://www.philgo.net/bbs/board.php?bo_table=help&wr_id=5'><img src='<?=$latest_skin_url?>/img/no-image.png' /></a></div></td>      
+			<td class='$nopadding' width=40><div class='travel_2_image'><a href='http://www.philgo.net/bbs/board.php?bo_table=help&wr_id=5'><img src='<?=x::url()?>/widget/<?=$widget_config['name']?>/img/no-image.png' /></a></div></td>      
             <td class='$nopadding' width=170><div class='travel_2_subject'><a href='http://www.philgo.net/bbs/board.php?bo_table=help&wr_id=5'>사이트 만들기 안내</a></div></td>
 		</tr>
 		<tr valign='top'>
-			<td class='$nopadding' width=40><div class='travel_2_image'><a href='http://www.philgo.net/bbs/board.php?bo_table=help&wr_id=4'><img src='<?=$latest_skin_url?>/img/no-image.png' /></a></div></td>      
+			<td class='$nopadding' width=40><div class='travel_2_image'><a href='http://www.philgo.net/bbs/board.php?bo_table=help&wr_id=4'><img src='<?=x::url()?>/widget/<?=$widget_config['name']?>/img/no-image.png' /></a></div></td>      
             <td class='$nopadding' width=170><div class='travel_2_subject'><a href='http://www.philgo.net/bbs/board.php?bo_table=help&wr_id=4'>블로그 만들기</a></div></td>
 		</tr>
 		<tr valign='top'>
-			<td class='$nopadding' width=40><div class='travel_2_image'><a href='http://www.philgo.net/bbs/board.php?bo_table=help&wr_id=2'><img src='<?=$latest_skin_url?>/img/no-image.png' /></a></div></td>      
+			<td class='$nopadding' width=40><div class='travel_2_image'><a href='http://www.philgo.net/bbs/board.php?bo_table=help&wr_id=2'><img src='<?=x::url()?>/widget/<?=$widget_config['name']?>/img/no-image.png' /></a></div></td>      
             <td class='$nopadding' width=170><div class='travel_2_subject'><a href='http://www.philgo.net/bbs/board.php?bo_table=help&wr_id=2'>여행사 사이트 만들기</a></div></td>
 		</tr>
     <?php }  ?>
