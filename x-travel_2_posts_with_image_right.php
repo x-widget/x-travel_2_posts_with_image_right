@@ -1,10 +1,4 @@
 <?php
-/*******
-**This widget should use board skin x-board-travel-3 
-**for product name and product price
-********/
-
-
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 include_once(G5_LIB_PATH.'/thumbnail.lib.php');
 
@@ -17,9 +11,6 @@ $file_headers = @get_headers($icon_url);
 if($file_headers[0] == 'HTTP/1.1 404 Not Found') {
     $icon_url = x::url()."/widget/".$widget_config['name']."/img/chat_icon2.png";
 }
-
-if( $widget_config['title'] ) $title = $widget_config['title'];
-else $title = 'no title';
 
 if( $widget_config['forum1'] ) $_bo_table = $widget_config['forum1'];
 else $_bo_table = $widget_config['default_forum_id'];
@@ -36,8 +27,15 @@ $list = g::posts( array(
 				)
 		);
 		
-$title_query = "SELECT bo_subject FROM ".$g5['board_table']." WHERE bo_table = '".$_bo_table."'";
-$title = cut_str(db::result( $title_query ),10,"...");
+$title = $widget_config['title'];
+	if ( empty( $title ) ) {
+		$cfg = g::config( $_bo_table, 'bo_subject' );
+		$title = cut_str( $cfg['bo_subject'],10,"...");
+	}
+
+	if ( empty($title) ) {
+		$title = "No title";
+	}
 
 ?>
 
